@@ -23,7 +23,7 @@ $field = 'campo';
 $link = mysql_connect($host, $user, $pass) or die('No se pudo Conectar: ' . mysql_error());
 mysql_select_db($bd) or die('No se pudo seleccionar la base de datos');
 //Consultamos a la Base de Datos
-$query = "SELECT $field FROM $table LIMIT 0,5";
+$query = "SELECT $field FROM $table LIMIT 0,100";
 $result = mysql_query($query) or die('Consulta Fallida: ' . mysql_error());
 
 while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
