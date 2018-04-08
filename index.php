@@ -18,12 +18,14 @@ $pass = 'root';
 $bd = 'basededatos';
 $table = 'tabla';
 $field = 'campo';
+$records = '0';
+$quantity = '100';
 
 //Conectamos a la Base de Datos
 $link = mysql_connect($host, $user, $pass) or die('No se pudo Conectar: ' . mysql_error());
 mysql_select_db($bd) or die('No se pudo seleccionar la base de datos');
 //Consultamos a la Base de Datos
-$query = "SELECT $field FROM $table LIMIT 0,100";
+$query = "SELECT $field FROM $table LIMIT $records,$quantity";
 $result = mysql_query($query) or die('Consulta Fallida: ' . mysql_error());
 
 while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
